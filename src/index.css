@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Стили для рангов */
+.rank-badge {
+  @apply inline-block rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-600 px-3 py-1 text-sm font-semibold text-white shadow-lg;
+}
+
+/* Стили для наград */
+.award-item {
+  @apply transition-all duration-300 hover:shadow-lg;
+}
+
+.award-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Цветовые эффекты для медалей */
+.award-item[class*="from-red-"]:hover {
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+}
+
+.award-item[class*="from-orange-"]:hover {
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+}
+
+.award-item[class*="from-yellow-"]:hover {
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+}
+
+.award-item[class*="from-blue-"]:hover {
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.award-item[class*="from-gray-"]:hover {
+  box-shadow: 0 10px 25px rgba(107, 114, 128, 0.3);
+}
+
+/* Стили для названий медалей */
+.award-item p {
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  word-spacing: 0.1em;
+  min-width: 0;
+  orphans: 3;
+  widows: 3;
+  line-height: 1.2;
+  white-space: normal;
+}
+
+/* Градиент для военной темы */
+.military-gradient {
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900;
+}
+
+/* Замедление marquee анимации */
+.marquee-slow {
+  animation-duration: 40s !important;
+}
+
+/* Анимации для марок */
+@keyframes marquee-diagonal {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%);
+  }
+}
+
+@keyframes marquee-diagonal-reverse {
+  0% {
+    transform: translateX(100%) translateY(100%);
+  }
+  100% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+}
+
+@keyframes marquee-diagonal-slow {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%);
+  }
+}
+
+.animate-marquee-diagonal {
+  animation: marquee-diagonal 40s linear infinite;
+}
+
+.animate-marquee-diagonal-reverse {
+  animation: marquee-diagonal-reverse 35s linear infinite;
+}
+
+.animate-marquee-diagonal-slow {
+  animation: marquee-diagonal-slow 50s linear infinite;
+} 
